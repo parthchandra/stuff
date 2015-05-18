@@ -1,0 +1,8 @@
+#
+# Warning - this file should only be modified with vifs(8)
+#
+# Failure to do so is unsupported and may be destructive.
+#
+10.10.10.20:/mapr/selfhosting /mapr/selfhosting nfs  defaults  0 0
+10.10.120.117:/mapr/ /mapr/parquetdata nfs  defaults  0 0
+ 

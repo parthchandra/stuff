@@ -1,0 +1,138 @@
+// ES
+{
+    "type": "file",
+    "enabled": true,
+    "connection": "file:///",
+    "workspaces": {
+        "root": {
+            "location": "/",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "offline": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/offline",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "canonical": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/canonical",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "views": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/views",
+            "writable": true,
+            "defaultInputFormat": null
+        },
+        "dpa": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/dpa",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "es": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "refdata": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/refdata",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "test": {
+            "location": "/Users/pchandra/work/data/customer/ericsson/test",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "tmp": {
+            "location": "/tmp",
+            "writable": true,
+            "defaultInputFormat": null
+        }
+    },
+    "formats": {
+        "psv": {
+            "type": "text",
+            "extensions": [
+                "tbl"
+                ],
+            "delimiter": "|"
+        },
+        "csv": {
+            "type": "text",
+            "extensions": [
+                "csv"
+                ],
+            "delimiter": ","
+        },
+        "tsv": {
+            "type": "text",
+            "extensions": [
+                "tsv"
+                ],
+            "delimiter": "\t"
+        },
+        "parquet": {
+            "type": "parquet"
+        },
+        "json": {
+            "type": "json"
+        }
+    }
+}
+
+// DFS
+
+{
+    "type": "file",
+    "enabled": true,
+    "connection": "file:///",
+    "workspaces": {
+        "root": {
+            "location": "/",
+            "writable": false,
+            "defaultInputFormat": null
+        },
+        "tmp": {
+            "location": "/tmp",
+            "writable": true,
+            "defaultInputFormat": null
+        }
+    },
+    "formats": {
+        "psv": {
+            "type": "text",
+            "extensions": [
+                "tbl"
+                ],
+            "delimiter": "|"
+        },
+        "csv": {
+            "type": "text",
+            "extensions": [
+                "csv"
+                ],
+            "delimiter": ","
+        },
+        "tsv": {
+            "type": "text",
+            "extensions": [
+                "tsv"
+                ],
+            "delimiter": "\t"
+        },
+        "dat": {
+            "type": "text",
+            "extensions": [
+                "dat"
+                ],
+            "delimiter": "|"
+        },
+        "parquet": {
+            "type": "parquet"
+        },
+        "json": {
+            "type": "json"
+        }
+    }
+}
