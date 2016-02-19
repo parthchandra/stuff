@@ -1,0 +1,7 @@
+set logging file <FILE>
+set logging on
+set pagination off
+thread apply all bt 15
+set logging off
+
+
