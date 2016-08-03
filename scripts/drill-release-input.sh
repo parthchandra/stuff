@@ -19,4 +19,4 @@ export DRILL_RELEASE_OUTDIR="/Users/pchandra/work/temp"
 export MY_REPO="https://github.com/parthchandra/incubator-drill.git"
 
 #directory to copy the release artifacts to 
-export LOCAL_STAGING_DIR="/Users/pchandra/work/drill-staging"
+export LOCAL_RELEASE_STAGING_DIR="/Users/pchandra/work/drill-staging"

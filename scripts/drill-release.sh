@@ -23,7 +23,7 @@ function copyFiles(){
     rm -fr ${LOCAL_RELEASE_STAGING_DIR}
     mkdir -p ${LOCAL_RELEASE_STAGING_DIR}/${DRILL_RELEASE_VERSION}
     cp ${DRILL_SRC}/target/apache-drill-${DRILL_RELEASE_VERSION}-src.tar.gz* ${LOCAL_RELEASE_STAGING_DIR}/${DRILL_RELEASE_VERSION}/ && \
-    cp ${DRILL_SRC}/target/apache-drill-${DRILL_RELEASE_VERSION}.-src.zip* ${LOCAL_RELEASE_STAGING_DIR}/${DRILL_RELEASE_VERSION}/ \
+    cp ${DRILL_SRC}/target/apache-drill-${DRILL_RELEASE_VERSION}-src.zip* ${LOCAL_RELEASE_STAGING_DIR}/${DRILL_RELEASE_VERSION}/ \
     cp ${DRILL_SRC}/distribution/target/apache-drill-${DRILL_RELEASE_VERSION}.tar.gz* ${LOCAL_RELEASE_STAGING_DIR}/${DRILL_RELEASE_VERSION}/  
 
 }
@@ -73,9 +73,9 @@ function readInputAndSetup(){
     read -p "Staging (personal) repo : " MY_REPO
     fi
 
-    if [ "${LOCAL_STAGING_DIR}" = "" ]
+    if [ "${LOCAL_RELEASE_STAGING_DIR}" = "" ]
     then
-    read -p "Local release staging directory : " LOCAL_STAGING_DIR
+    read -p "Local release staging directory : " LOCAL_RELEASE_STAGING_DIR
     fi
 
     if [ "${GPG_PASSPHRASE}" = "" ]
