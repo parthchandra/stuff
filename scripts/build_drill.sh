@@ -8,10 +8,10 @@ cd ${drill_src}
 
 echo "Building Drill profile ${profile}. Logging output to ${logfile}"
 rm -fr "log.path_IS_UNDEFINED"
-mvn clean install -DskipTests > "${logfile}" 2>&1  & 
+#mvn clean install -DskipTests > "${logfile}" 2>&1  & 
 #mvn clean install -DskipTests -DskipJdbcAll  > "${logfile}" 2>&1  & 
 #mvn clean install -DskipJdbcAll  > "${logfile}" 2>&1  & 
-#mvn clean install  > "${logfile}" 2>&1  & 
+mvn clean install  > "${logfile}" 2>&1  & 
 
 #sleep 2 
 #tail -F "${logfile}"

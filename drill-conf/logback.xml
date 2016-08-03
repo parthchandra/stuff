@@ -54,7 +54,6 @@
         <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
-    -->
     <logger name="org.apache.drill" additivity="false">
         <level value="debug" />
         <appender-ref ref="FILE" />
@@ -63,13 +62,20 @@
         <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
+    <logger name="org.apache.drill.exec.store.parquet.ParquetRecordWriter" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
 
-    <!--
     <logger name="org.apache.drill.exec.memory.AtomicRemainder" additivity="false">
         <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
     -->
+    <logger name="org.apache.drill.exec.store.ischema" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
    
   <logger name="org.apache.drill" additivity="false">
     <level value="debug" />
