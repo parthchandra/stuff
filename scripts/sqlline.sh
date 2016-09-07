@@ -9,7 +9,7 @@ cd ${drill_src}
 echo ${drill_bin}
 cd ${drill_bin}
 export PS1="[SQLLINE][\u@\h:apache-drill-${version}]>"
-clear
+#clear
 echo 
 export JAVA_TOOL_OPTIONS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=5015,suspend=n"
 echo "Sqlline apache-drill-${version}"

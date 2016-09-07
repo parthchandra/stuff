@@ -65,11 +65,9 @@ select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/nation_dictionary
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/nullable_test.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/nullable_varlen.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/nullable_with_nulls.parquet`;
-select * from dfs.`/Users/pchandra/work/data/compressed/testfiles/orders_part-m-00001.parquet.zip`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/parquet_repeated_5_22_14`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/parquet_with_nulls_should_sum_100000_nulls_first.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/part-m-00000.parquet`;
-select * from dfs.`/Users/pchandra/work/data/compressed/testfiles/part-m-00019.parquet.gz`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/pig_bool_9_25_13.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/pig_test_9_15.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/store_sales`;
@@ -79,7 +77,6 @@ select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/testData.parquet`
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/varLen.parquet/a`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/voter.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/web_returns`;
-select * from dfs.`/Users/pchandra/work/data/parquet/testfiles/withnull.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles2/chars-formats.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles2/customer.dict.parquet`;
 select * from dfs.`/Users/pchandra/work/data/parquet/testfiles2/customer.impala.parquet`;

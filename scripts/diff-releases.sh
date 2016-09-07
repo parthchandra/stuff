@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#
+# Example:
+# diff-releases.sh 1.6.0 drill-1.6.0-mapr-r1 master  > ~/work/temp/diff_releases__1.6.0__drill-1.6.0-mapr-r1__master.csv 
+#
+
+
+
 base_branch=$1
 mapr_branch=$2
 apache_branch=$3
@@ -294,7 +301,7 @@ function diffTree(){
 }
 
 function getChanges(){
-    runCmd git log --pretty=format:"%H,%aN,%s" Apache/${apache_branch} ^Apache/${base_branch} --no-merges > ${diff_dir}/new-${apache_branch}.txt
+    runCmd git log --pretty=format:"%H,%aN,%s" Mapr/${apache_branch} ^Apache/${base_branch} --no-merges > ${diff_dir}/new-${apache_branch}.txt
     runCmd git log --pretty=format:"%H,%aN,%s" Mapr/${mapr_branch} ^Apache/${base_branch} --no-merges > ${diff_dir}/new-${mapr_branch}.txt
 }
 

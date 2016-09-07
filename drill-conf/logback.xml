@@ -16,6 +16,9 @@
  limitations under the License.
 -->
 <configuration>
+
+  <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
   <appender name="SOCKET"
     class="de.huxhorn.lilith.logback.appender.ClassicMultiplexSocketAppender">
     <Compressing>true</Compressing>
@@ -33,7 +36,6 @@
       </pattern>
     </encoder>
   </appender>
-
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>/Users/pchandra/work/logs/drill/drillbit.${timeBySec}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
@@ -73,6 +75,14 @@
     </logger>
     -->
     <logger name="org.apache.drill.exec.store.ischema" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.store.parquet" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.dotdrill" additivity="false">
         <level value="trace" />
         <appender-ref ref="FILE" />
     </logger>
