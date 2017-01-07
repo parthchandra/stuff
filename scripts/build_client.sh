@@ -37,14 +37,14 @@ rm -fr Debug Release protobuf src CMake* cmake*
 
 cmake -G "${IDE}" -D "CMAKE_BUILD_TYPE=${BUILDTYPE}" ..
 
-echo "Restoring Settingsi ..."
+echo "Restoring Settings ..."
 cd ${client_build_dir}/drillclient.xcodeproj
 tar xvf ~/work/temp/drillclient-${dtstamp}-.xcodeproj.tar "drillclient.xcodeproj/xcuserdata" >& /tmp/drill-client-tar-restore.out
 cd ${client_build_dir}
 
 echo " Building"
 #For XCode only
-xcodebuild -project drillclient.xcodeproj -target fixProtobufs 
-xcodebuild -project drillclient.xcodeproj -target cpProtobufs
-xcodebuild -project drillclient.xcodeproj -target ALL_BUILD
+xcodebuild -project drillclient.xcodeproj -configuration ${BUILDTYPE} -target fixProtobufs
+xcodebuild -project drillclient.xcodeproj -configuration ${BUILDTYPE} -target cpProtobufs
+xcodebuild -project drillclient.xcodeproj -configuration ${BUILDTYPE} -target ALL_BUILD
 

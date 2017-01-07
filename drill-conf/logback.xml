@@ -51,12 +51,16 @@
         </encoder>
     </appender>
 
-    <!--
-    <logger name="org.apache.drill.exec.work.fragment.FragmentExecutor" additivity="false">
-        <level value="debug" />
+    <logger name="org.apache.drill" additivity="false">
+        <level value="info" />
         <appender-ref ref="FILE" />
     </logger>
-    <logger name="org.apache.drill" additivity="false">
+    <!--
+    <logger name="org.apache.drill.exec.store.parquet.columnreaders.AsyncPageReader" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.work.fragment.FragmentExecutor" additivity="false">
         <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
@@ -64,18 +68,42 @@
         <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
-    <logger name="org.apache.drill.exec.store.parquet.ParquetRecordWriter" additivity="false">
+    <logger name="org.apache.drill.exec.util.filereader" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.store.parquet" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="FILE" />
+    </logger>
+-->
+    <logger name="org.apache.drill.exec.record.AbstractRecordBatch" additivity="false">
         <level value="trace" />
         <appender-ref ref="FILE" />
     </logger>
-
+    <logger name="org.apache.drill.exec.record.AbstractSingleRecordBatch" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.physical.impl.ScanBatch" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.store.parquet.columnreaders.AsyncPageReader" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="org.apache.drill.exec.util.filereader.BufferedDirectBufInputStream" additivity="false">
+        <level value="trace" />
+        <appender-ref ref="FILE" />
+    </logger>
+<!--
     <logger name="org.apache.drill.exec.memory.AtomicRemainder" additivity="false">
         <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
-    -->
     <logger name="org.apache.drill.exec.store.ischema" additivity="false">
-        <level value="trace" />
+        <level value="debug" />
         <appender-ref ref="FILE" />
     </logger>
     <logger name="org.apache.drill.exec.store.parquet" additivity="false">
@@ -91,6 +119,7 @@
     <level value="debug" />
     <appender-ref ref="SOCKET" />
   </logger>
+    -->
 
   <root>
     <level value="error" />

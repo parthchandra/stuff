@@ -5,14 +5,16 @@ function pause(){
 }
 
 function runCmd(){
-echo " ----------------- "  > ${DRILL_RELEASE_OUTFILE}
-echo " ----------------- $1 "  | tee ${DRILL_RELEASE_OUTFILE}
-echo " ----------------- "  > ${DRILL_RELEASE_OUTFILE}
+echo " ----------------- "  >> ${DRILL_RELEASE_OUTFILE}
+echo " ----------------- $1 "  
+echo " ----------------- $1 " >> ${DRILL_RELEASE_OUTFILE}
+echo " ----------------- "  >> ${DRILL_RELEASE_OUTFILE}
 shift
 # run the command, send output to out file
-"$@" >& ${DRILL_RELEASE_OUTFILE}
+"$@" >>& ${DRILL_RELEASE_OUTFILE}
 if [ $? -ne 0 ]; then
-        echo FAILED to run $1 | tee ${DRILL_RELEASE_OUTFILE}
+        echo FAILED to run $1 
+        echo FAILED to run $1 >> ${DRILL_RELEASE_OUTFILE}
         exit 1
 fi
 #wait for user to verify and continue
