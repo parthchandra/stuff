@@ -11,6 +11,16 @@ client_build_dir=${drill_client_dir}/build
 cwd=`pwd`
 os=`uname -a | awk '{ print $1}'`
 
+function ask(){
+    local __question = $1
+    local __key = $2
+    local _keypressed
+#    read -rsp $'Press any key to continue...\n' -n1 key
+    read -rsp $__question -n1 _keypressed
+#    echo $_keypressed
+    eval $__key="'$_keypressed'"
+}
+
 if [ ! -n ${DRILL_VERSION} ]
 then
     cd ${drill_src}
