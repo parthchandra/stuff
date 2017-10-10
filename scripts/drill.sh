@@ -29,9 +29,9 @@ echo "${cmd} Drillbit apache-drill-${version}"
 sudo ./drillbit.sh ${cmd} --config ~/work/drill-conf
 echo "Done"
 #clear
-if [ "${cmd}" != "stop" ]
-then
-    clear 
-    . ~/work/scripts/drill_header.sh
-    tail -n0 -F /var/log/drill/drillbit.out 
-fi
+#if [ "${cmd}" != "stop" ]
+#then
+    #clear 
+    #. ~/work/scripts/drill_header.sh
+    #tail -n0 -F /var/log/drill/drillbit.out 
+#fi

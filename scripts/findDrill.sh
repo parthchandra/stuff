@@ -9,7 +9,7 @@ then
         pushd ${drill_src} >& /dev/null
         version=`mvn --non-recursive org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -e '^[[:digit:]]'`
         drill_bin="${drill_src}/distribution/target/apache-drill-${version}/apache-drill-${version}/bin"
-        if [ -d ~/work/stuff/drill-conf/drill-env.sh ]
+        if [ -f ~/work/stuff/drill-conf/drill-env.sh ]
         then
             ln -s ${drill_bin}/../conf/drill-env.sh ~/work/stuff/drill-conf/drill-env.sh
         fi

@@ -35,7 +35,7 @@ tar xvf ~/work/temp/drillclient-${dtstamp}.xcodeproj.tar >& /tmp/drill-client-ta
 
 rm -fr Debug Release protobuf src CMake* cmake*
 
-cmake -G "${IDE}" -D "CMAKE_BUILD_TYPE=${BUILDTYPE}" ..
+cmake -G "${IDE}" -D OPENSSL_ROOT_DIR=/usr/local/opt/openssl -D "CMAKE_BUILD_TYPE=${BUILDTYPE}" ..
 
 echo "Restoring Settings ..."
 cd ${client_build_dir}/drillclient.xcodeproj
