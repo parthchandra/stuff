@@ -15,10 +15,11 @@ export JAVA_TOOL_OPTIONS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address
 echo "Sqlline apache-drill-${version}"
 
 #localhost - via zookeeper
-#./sqlline -u "jdbc:drill:zk=localhost:2181"  -n admin -p admin --showNestedErrs=false
+./sqlline -u "jdbc:drill:zk=localhost:2181"  -n admin -p admin --showNestedErrs=false
 
 #default - localhost (direct)
 #./sqlline -u "jdbc:drill:schema=dfs.work;drillbit=localhost:31010"  -n admin -p admin --showNestedErrs=false
+#./sqlline -u "jdbc:drill:schema=dfs.work;drillbit=localhost:31010" --showNestedErrs=false
 
 #ericsson
 #./sqlline -u "jdbc:drill:schema=ericsson.canonical;drillbit=10.10.10.121:3101"  -n admin -p admin
@@ -50,7 +51,7 @@ echo "Sqlline apache-drill-${version}"
 #./sqlline -u "jdbc:drill:schema=dfs.work;drillbit=10.10.10.121:31010;drill.exec.security.user.encryption.ssl.enabled=true;javax.net.ssl.trustStorePassword=drill123"  -n 121admin -p 123admin --showNestedErrs=false
 
 #Using the trustsore
-./sqlline -u "jdbc:drill:schema=dfs.work;drillbit=10.10.10.121:31010;enableTLS=true;trustStorePath=/Users/pchandra/work/drill-conf/ssl/truststore.ks;trustStorePassword=drill123"  -n 121admin -p 123admin --showNestedErrs=false
+#./sqlline -u "jdbc:drill:schema=dfs.work;drillbit=10.10.10.121:31010;enableTLS=true;trustStorePath=/Users/pchandra/work/drill-conf/ssl/truststore.ks;trustStorePassword=drill123" --showNestedErrs=false
 
 #using system truststore
 #./sqlline -u "jdbc:drill:schema=dfs.work;drillbit=10.10.10.121:31010;enableTLS=true;useSystemTrustStore=true;trustStoreType=KeychainStore"  -n 121admin -p 123admin --showNestedErrs=false
