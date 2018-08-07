@@ -41,7 +41,7 @@ fi
 
 function createDirectoryIfAbsent() {
 DIR_NAME="$1"
-if [ !-d "${DIR_NAME}" ]; then
+if [ ! -d "${DIR_NAME}" ]; then
 	echo "Creating directory ${DIR_NAME}"		
 	mkdir -p "${DIR_NAME}"
 fi	
@@ -118,10 +118,14 @@ function readInputAndSetup(){
     touch ${DRILL_RELEASE_OUTFILE}
 }
 
-checkPassphrase(){
-    # FIXME: The checkPassphrase function does not work for passphrases with embedded spaces.
-    echo "Validating passphrase is disabled."
-    #checkPassphrase && "Passphrase accepted"
+checkPassphraseNoSpace(){
+    # The checkPassphrase function does not work for passphrases with embedded spaces.
+    if [ -z "${GPG_PASSPHRASE##* *}" ] ;then
+	echo "Passphrase contains a space - No Validation performed."
+    else 
+        echo -n "Validating passphrase .... "
+        checkPassphrase && echo "Passphrase accepted" || echo "Invalid passphrase"
+    fi
 }
 
 cloneRepo(){
@@ -133,8 +137,11 @@ cloneRepo(){
 }
 
 ###### BEGIN  #####
+# Location of checksum.sh 
+export CHKSMDIR=`pwd`
+
 readInputAndSetup
-checkPassphrase
+checkPassphraseNoSpace
 
 runCmd "Cloning the repo" cloneRepo
 
@@ -160,7 +167,7 @@ runCmd "Deploying ..." mvn deploy -Papache-release -DskipTests -Dgpg.passphrase=
 runCmd "Copying" copyFiles
 
 #echo "Check artifacts are signed correctly"
-runCmd "Verifying artifacts are signed correctly" checksum.sh ${DRILL_SRC}/distribution/target/apache-drill-${DRILL_RELEASE_VERSION}.tar.gz
+runCmd "Verifying artifacts are signed correctly" ${CHKSMDIR}/checksum.sh ${DRILL_SRC}/distribution/target/apache-drill-${DRILL_RELEASE_VERSION}.tar.gz
 pause
 
 runCmd "Copy release files to home.apache.org" sftp ${APACHE_LOGIN}@home.apache.org <<EOF
@@ -175,7 +182,7 @@ runCmd "Copy release files to home.apache.org" sftp ${APACHE_LOGIN}@home.apache.
 	mkdir rc${RELEASE_ATTEMPT}
 	cd rc${RELEASE_ATTEMPT}
 	put ${LOCAL_RELEASE_STAGING_DIR}/${DRILL_RELEASE_VERSION}/* .
-	exit
+	bye
 EOF
 
 echo "Go to the Apache maven staging repo and close the new jar release"
